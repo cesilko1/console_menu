@@ -7,15 +7,19 @@ namespace Menu {
 		//==================== ATRIBUTES ====================//
 
 		//list of console components
-		private ArrayList MenuItems = new ArrayList();
+		private List<MenuItem> MenuItems = new List<MenuItem>();
 
 		//header of menu
 		private string MenuHeader;
 
+		//index of activated menu item
+		private int ActiveItem = 0;
+
  
 		//color defintions
-		public ConsoleColor TextColor = ConsoleColor.Red;
-		public ConsoleColor HighlightColor = ConsoleColor.Blue;
+		public ConsoleColor TextColor           = ConsoleColor.Green;
+		public ConsoleColor HighlightBackground = ConsoleColor.Green;
+		public ConsoleColor HighlightText       = ConsoleColor.Black;
 
 
 		//==================== CONSTRUCTOR ====================//
@@ -27,12 +31,74 @@ namespace Menu {
 
 		//==================== METHODS ====================//
 
-		public void AddItem<T>(T Item) {
+		public void AddItem(MenuItem Item) {
 			MenuItems.Add(Item);
 		}
 
 		public void Show() {
-			Console.WriteLine((MenuItems[0] as ConsoleMenu).Show());
+			Console.Clear();
+
+			Console.CursorVisible = false;
+
+			ConsoleKeyInfo btn;
+
+			while(true) {
+
+				Console.Clear();
+
+				Console.ResetColor();
+
+				Console.ForegroundColor = TextColor;
+
+				Console.WriteLine(MenuHeader + "\n");
+
+				Console.ResetColor();
+
+				for(int i = 0; i < MenuItems.Count; i++) {
+					if(i == ActiveItem) {
+						Console.ForegroundColor = HighlightText;
+						Console.BackgroundColor = HighlightBackground;
+						Console.WriteLine(MenuItems[i].Show());
+						Console.ResetColor(); 
+					}
+					else {
+						Console.ForegroundColor = TextColor;
+						Console.WriteLine(MenuItems[i].Show());
+						Console.ResetColor();
+					}
+				}				
+
+				btn = Console.ReadKey();
+
+				switch(btn.Key) {
+					case ConsoleKey.UpArrow:
+						if(ActiveItem > 0) {
+							ActiveItem--;
+						}
+						else {
+							ActiveItem = 0;
+						}
+						break;
+					
+					case ConsoleKey.DownArrow:
+						if(ActiveItem < MenuItems.Count-1) {
+							ActiveItem++;
+						}
+						else {
+							ActiveItem = MenuItems.Count-1;
+						}
+						break;
+
+					case ConsoleKey.Enter:
+						MenuItems[ActiveItem].Action();
+						break;
+
+					default:
+						break;
+				}
+
+
+			}
 		}
 
 	}

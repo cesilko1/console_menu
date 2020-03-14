@@ -2,9 +2,9 @@ using System;
 
 namespace Menu {
 	
-    //*******************************************//
-	//                  Button                  //
-	//*****************************************//
+      //******************************************//
+	 //                  Button                  //
+	//******************************************//
 
     public class Button : MenuItem{
 		//==================== ATRIBUTES ====================//
@@ -29,18 +29,17 @@ namespace Menu {
 
 
 
-    //*********************************************//
-	//                  Switcher                  //
-	//*******************************************//
+      //********************************************//
+	 //                  Switcher                  //
+	//********************************************//
 
     public class Switcher : MenuItem {
         //==================== ATRIBUTES ====================//
 
         public bool State = false;
 
-        private string OnText = "on";
-
-        private string OffText = "off";
+        private string OnText = "on  ";
+        private string OffText = "off ";
 
 
         //==================== CONSTRUCTOR ====================//
@@ -49,12 +48,25 @@ namespace Menu {
             this.Title = Title;
         }
 
-        public override string Show() {
-            return Title;
+        public Switcher(string Title, bool State) {
+            this.Title = Title;
+            this.State = State;
         }
 
+        public override string Show() {
+            if(State) {
+                return Title + ": " + OnText;
+            }
+            else {
+                return Title + ": " + OffText;
+            }
+        }
+
+
+        //==================== METHODS ====================//
+
         public override void Action() {
-            
+            State = !State;
         }
     }
 }
