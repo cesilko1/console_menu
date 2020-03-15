@@ -16,10 +16,12 @@ namespace Menu {
         //==================== CONSTRUCTOR ====================//
 
         public Switcher(string Title) {
+			base.Data.Add(State);
             base.Title = Title;
         }
 
         public Switcher(string Title, bool State) {
+			base.Data.Add(State);
             base.Title = Title;
             this.State = State;
         }
@@ -38,8 +40,10 @@ namespace Menu {
 
         public override bool Action() {
             State = !State;
+			Data[0] = State;
             return true;
         }
     }
+
 
 }

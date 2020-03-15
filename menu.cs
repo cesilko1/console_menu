@@ -8,6 +8,7 @@ public class main {
 
         MainMenu.AddItem(new Button(" START   "));
         MainMenu.AddItem(new Button(" Options "));
+        MainMenu.AddItem(new Switcher(" Colored "));
         MainMenu.AddItem(new Button(" EXIT    "));
 
         SettingsMenu.AddItem(new Button(" Back         "));
@@ -31,7 +32,7 @@ public class main {
                     continue;
                 }
             }
-            else if(MenuLog == 2) {
+            else if(MenuLog == 3) {
                 Console.WriteLine("good bye...");
                 break;
             }
@@ -42,5 +43,7 @@ public class main {
 
         Console.WriteLine(SettingsMenu.GetData()[2]);
         
+        Console.Write("Colored: ");
+        Console.WriteLine(MainMenu.GetData()[2]);
     }
 }

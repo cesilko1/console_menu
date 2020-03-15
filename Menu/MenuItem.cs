@@ -9,7 +9,7 @@ namespace Menu {
 		//item title
 		protected string Title;
 
-		public ArrayList Data;
+		public ArrayList Data = new ArrayList();
 
 
 		//==================== METHODS ====================//
