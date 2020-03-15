@@ -112,7 +112,7 @@ namespace Menu {
 			ArrayList MenuData = new ArrayList();
 
 			for(int i = 0; i < MenuItems.Count; i++) {
-				MenuData.Add(MenuItems[i].Data);
+				MenuData.Add(MenuItems[i]);
 			}
 
 			return MenuData;

@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Menu {
 	public abstract class MenuItem {
@@ -7,9 +9,7 @@ namespace Menu {
 		//item title
 		protected string Title;
 
-		//tata to return
-		protected var Data;
-
+		public ArrayList Data;
 
 
 		//==================== METHODS ====================//
