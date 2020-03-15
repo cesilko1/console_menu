@@ -2,48 +2,23 @@ using System;
 using Menu;
 
 public class main {
-    public static void Main(string[] argv) {
-        ConsoleMenu MainMenu     = new ConsoleMenu("Menu");
-        ConsoleMenu SettingsMenu = new ConsoleMenu("Settings");
+	public static void Main(string[] argv) {
 
-        MainMenu.AddItem(new Button(" START   "));
-        MainMenu.AddItem(new Button(" Options "));
-        MainMenu.AddItem(new Switcher(" Colored "));
-        MainMenu.AddItem(new Button(" EXIT    "));
+		//create instance with menu header
+		ConsoleMenu menu = new ConsoleMenu("Example menu");
 
-        SettingsMenu.AddItem(new Button(" Back         "));
-        SettingsMenu.AddItem(new Switcher(" Sounds ", true));
-        SettingsMenu.AddItem(new Switcher(" Music  ", true));
+		//adding items into menu
+		menu.AddItem(new Button(" Yes "));    //item index 0
+		menu.AddItem(new Button(" No "));     //item index 1
+		menu.AddItem(new Switcher(" Music")); //item index 2
 
+		//method Display() returns index of pressed button and show interactive menu in console
+		int menu_id = menu.Display();
 
-        
-        while(true) {
+		//write id of pressed button
+		Console.WriteLine(menu_id);
 
-            int MenuLog = MainMenu.Display();
-
-            if(MenuLog == 0) {
-                Console.WriteLine("Starting");
-                break;
-            }
-            else if(MenuLog == 1) {
-                int SettingsLog = SettingsMenu.Display();
-
-                if(SettingsLog == 0) {
-                    continue;
-                }
-            }
-            else if(MenuLog == 3) {
-                Console.WriteLine("good bye...");
-                break;
-            }
-            
-        }
-
-        Console.WriteLine(SettingsMenu.GetData()[1]);
-
-        Console.WriteLine(SettingsMenu.GetData()[2]);
-        
-        Console.Write("Colored: ");
-        Console.WriteLine(MainMenu.GetData()[2]);
-    }
+		//write data of menu item with index 2
+		Console.WriteLine(menu.GetData()[2]);
+	}
 }
