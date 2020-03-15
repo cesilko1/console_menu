@@ -37,7 +37,7 @@ namespace Menu {
 
 
 
-		public int Show() {
+		public int Display() {
 			bool Running = true;
 
 			Console.Clear();

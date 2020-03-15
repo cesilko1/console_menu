@@ -18,14 +18,14 @@ public class main {
         
         while(true) {
 
-            int MenuLog = MainMenu.Show();
+            int MenuLog = MainMenu.Display();
 
             if(MenuLog == 0) {
                 Console.WriteLine("Starting");
                 break;
             }
             else if(MenuLog == 1) {
-                int SettingsLog = SettingsMenu.Show();
+                int SettingsLog = SettingsMenu.Display();
 
                 if(SettingsLog == 0) {
                     continue;

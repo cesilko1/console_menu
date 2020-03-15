@@ -9,12 +9,10 @@ namespace Menu {
     public class Button : MenuItem{
 		//==================== ATRIBUTES ====================//
 
-        public bool Data;
-
 		//==================== CONSTRUCTOR ====================//
 
 		public Button(string Title) {
-			this.Title = Title;
+			base.Title = Title;
 		}
 
 
@@ -41,7 +39,7 @@ namespace Menu {
     public class Switcher : MenuItem {
         //==================== ATRIBUTES ====================//
 
-        public bool Data = false;
+        Data = false;
 
         private string OnText = "on  ";
         private string OffText = "off ";
@@ -50,12 +48,12 @@ namespace Menu {
         //==================== CONSTRUCTOR ====================//
 
         public Switcher(string Title) {
-            this.Title = Title;
+            base.Title = Title;
         }
 
         public Switcher(string Title, bool State) {
-            this.Title = Title;
-            this.Data = State;
+            base.Title = Title;
+            Data = State;
         }
 
         public override string Show() {
