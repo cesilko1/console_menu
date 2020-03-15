@@ -9,6 +9,7 @@ namespace Menu {
     public class Button : MenuItem{
 		//==================== ATRIBUTES ====================//
 
+        public bool Data;
 
 		//==================== CONSTRUCTOR ====================//
 
@@ -40,7 +41,7 @@ namespace Menu {
     public class Switcher : MenuItem {
         //==================== ATRIBUTES ====================//
 
-        public bool State = false;
+        public bool Data = false;
 
         private string OnText = "on  ";
         private string OffText = "off ";
@@ -54,11 +55,11 @@ namespace Menu {
 
         public Switcher(string Title, bool State) {
             this.Title = Title;
-            this.State = State;
+            this.Data = State;
         }
 
         public override string Show() {
-            if(State) {
+            if(Data) {
                 return Title + ": " + OnText;
             }
             else {
@@ -70,7 +71,7 @@ namespace Menu {
         //==================== METHODS ====================//
 
         public override bool Action() {
-            State = !State;
+            Data = !Data;
             return true;
         }
     }

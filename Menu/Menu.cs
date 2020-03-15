@@ -35,6 +35,8 @@ namespace Menu {
 			MenuItems.Add(Item);
 		}
 
+
+
 		public int Show() {
 			bool Running = true;
 
@@ -103,6 +105,17 @@ namespace Menu {
 			Console.CursorVisible = true;
 
 			return ActiveItem;
+		}
+
+
+		public ArrayList GetData() {
+			ArrayList MenuData = new ArrayList();
+
+			for(int i = 0; i < MenuItems.Count; i++) {
+				MenuData.Add(MenuItems[i].Data);
+			}
+
+			return MenuData;
 		}
 
 	}

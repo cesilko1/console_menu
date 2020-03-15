@@ -37,6 +37,10 @@ public class main {
             }
             
         }
+
+        Console.WriteLine(SettingsMenu.GetData()[1]);
+
+        Console.WriteLine(SettingsMenu.GetData()[2]);
         
     }
 }

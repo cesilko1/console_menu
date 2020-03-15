@@ -6,6 +6,8 @@ namespace Menu {
 
 		protected string Title;
 
+		public object Data;
+
 
 		//==================== METHODS ====================//
 		
