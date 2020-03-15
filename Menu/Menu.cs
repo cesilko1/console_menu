@@ -35,14 +35,16 @@ namespace Menu {
 			MenuItems.Add(Item);
 		}
 
-		public void Show() {
+		public int Show() {
+			bool Running = true;
+
 			Console.Clear();
 
 			Console.CursorVisible = false;
 
 			ConsoleKeyInfo btn;
 
-			while(true) {
+			while(Running) {
 
 				Console.Clear();
 
@@ -90,15 +92,17 @@ namespace Menu {
 						break;
 
 					case ConsoleKey.Enter:
-						MenuItems[ActiveItem].Action();
+						Running = MenuItems[ActiveItem].Action();
 						break;
 
 					default:
 						break;
 				}
 
-
 			}
+			Console.CursorVisible = true;
+
+			return ActiveItem;
 		}
 
 	}

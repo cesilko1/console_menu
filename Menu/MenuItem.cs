@@ -9,7 +9,7 @@ namespace Menu {
 
 		//==================== METHODS ====================//
 		
-		public abstract void Action();
+		public abstract bool Action();
 
 		public abstract string Show();
 

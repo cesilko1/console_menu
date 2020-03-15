@@ -23,9 +23,13 @@ namespace Menu {
 			return Title;
 		}
 
-        public override void Action() {
+        public override bool Action() {
+            return false;
         }
 	}
+
+
+
 
 
 
@@ -65,8 +69,9 @@ namespace Menu {
 
         //==================== METHODS ====================//
 
-        public override void Action() {
+        public override bool Action() {
             State = !State;
+            return true;
         }
     }
 }
