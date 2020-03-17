@@ -26,6 +26,14 @@ namespace Menu {
             this.State = State;
         }
 
+        public Switcher(string Title, bool State, string OnText, string OffText) {
+			base.Data.Add(State);
+            base.Title   = Title;
+            this.State   = State;
+            this.OnText  = OnText;
+            this.OffText = OffText;
+        }
+
 
         //==================== METHODS ====================//
 
