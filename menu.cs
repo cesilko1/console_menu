@@ -10,6 +10,7 @@ public class main {
 		//adding items into menu
 		menu.AddItem(new Button(" Yes "));    //item index 0
 		menu.AddItem(new Button(" No "));     //item index 1
+		menu.AddItem(new Input(" Name", "unnamed"));
 		menu.AddItem(new Switcher(" Music")); //item index 2
 
 		//method Display() returns index of pressed button and show interactive menu in console
