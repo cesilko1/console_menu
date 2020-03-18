@@ -29,7 +29,7 @@ namespace Menu {
 		public override bool Action() {
 			Console.CursorVisible = true;
 			Console.Clear();
-			Console.WriteLine(Title);
+			Console.Write(Title + ": ");
 
 			InputData = Console.ReadLine();
 

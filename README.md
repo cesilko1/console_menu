@@ -2,7 +2,7 @@
 
 ## Interactive console menu for C#
 
-*v 1.0.0*
+*v 1.1.0*
 
 ---
 
@@ -20,7 +20,8 @@ public class main {
 		//adding items into menu
 		menu.AddItem(new Button(" Yes "));    //item index 0
 		menu.AddItem(new Button(" No "));     //item index 1
-		menu.AddItem(new Switcher(" Music")); //item index 2
+		menu.AddItem(new Input(" Name"));     //item index 2
+		menu.AddItem(new Switcher(" Music")); //item index 3
 
 		//method Display() returns index of pressed button and show interactive menu in console
 		int menu_id = menu.Display();
@@ -30,6 +31,9 @@ public class main {
 
 		//write data of menu item with index 2
 		Console.WriteLine(menu.GetData()[2]);
+
+		//write data of menu item with index 3
+		Console.WriteLine(menu.GetData()[3]);
 	}
 }
 ```
@@ -43,3 +47,6 @@ public class main {
 
 * **Switcher()**
 	* switches between on and off
+
+* **Input()**
+	* text or number input
