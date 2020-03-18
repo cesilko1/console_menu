@@ -31,34 +31,40 @@ namespace Menu {
 
 		//==================== METHODS ====================//
 
+		//add new menu item into menu
 		public void AddItem(MenuItem Item) {
 			MenuItems.Add(Item);
 		}
 
-
-
+		//opens teh menu and returns index of pressed button
 		public int Display() {
+
+			//true when menu is opened
 			bool Running = true;
 
+			//set console
 			Console.Clear();
-
 			Console.CursorVisible = false;
 
+			//pressed button
 			ConsoleKeyInfo btn;
 
 			while(Running) {
 
+				//set console colores
 				Console.Clear();
-
 				Console.ResetColor();
-
 				Console.ForegroundColor = TextColor;
 
+				//print menu header
 				Console.WriteLine(MenuHeader + "\n");
 
 				Console.ResetColor();
 
+				//list and print all menu items
 				for(int i = 0; i < MenuItems.Count; i++) {
+
+					//it item is active, then print highlighted item
 					if(i == ActiveItem) {
 						Console.ForegroundColor = HighlightText;
 						Console.BackgroundColor = HighlightBackground;
@@ -75,6 +81,8 @@ namespace Menu {
 				btn = Console.ReadKey();
 
 				switch(btn.Key) {
+
+					//activate item on the activeted item
 					case ConsoleKey.UpArrow:
 						if(ActiveItem > 0) {
 							ActiveItem--;
@@ -84,6 +92,7 @@ namespace Menu {
 						}
 						break;
 					
+					//activate item under the activeted item
 					case ConsoleKey.DownArrow:
 						if(ActiveItem < MenuItems.Count-1) {
 							ActiveItem++;
@@ -93,6 +102,7 @@ namespace Menu {
 						}
 						break;
 
+					//activete item when enter is pressed
 					case ConsoleKey.Enter:
 						Running = MenuItems[ActiveItem].Action();
 						break;
@@ -107,11 +117,12 @@ namespace Menu {
 			return ActiveItem;
 		}
 
-
+		//returns data from all menu items
 		public ArrayList GetData() {
 			ArrayList MenuData = new ArrayList();
 
 			for(int i = 0; i < MenuItems.Count; i++) {
+				//some items don't have data (e.g. Button)
 				try {
 					MenuData.Add(MenuItems[i].Data[0]);
 				}
