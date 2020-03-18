@@ -4,8 +4,8 @@ using Menu;
 public class main {
 	public static void Main(string[] argv) {
 
-		//create instance with menu header
-		ConsoleMenu menu = new ConsoleMenu("Example menu");
+		//create instance with menu header, set true for looped menu cursor
+		ConsoleMenu menu = new ConsoleMenu("Example menu", true);
 
 		//adding items into menu
 		menu.AddItem(new Button("Yes"));    //item index 0

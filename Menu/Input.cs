@@ -7,6 +7,7 @@ namespace Menu {
 	public class Input : MenuItem {
 		//==================== ATRIBUTES ====================//
 
+		//input data that is returned and displayed in console
 		private string InputData = "";
 
 		//==================== CONSTRUCTORS ====================//
@@ -26,6 +27,12 @@ namespace Menu {
 
 		//==================== METHODS ====================//
 
+		//print componet into console
+		public override string Show() {
+			return Title + ": " + InputData + " ";
+		}
+
+		//action when enter is preseed
 		public override bool Action() {
 			Console.CursorVisible = true;
 			Console.Clear();
@@ -37,10 +44,6 @@ namespace Menu {
 
 			Data[0] = InputData;
 			return true;
-		}
-
-		public override string Show() {
-			return Title + ": " + InputData + " ";
 		}
 	}
 

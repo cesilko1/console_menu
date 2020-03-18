@@ -37,6 +37,7 @@ namespace Menu {
 
         //==================== METHODS ====================//
 
+        //print componet into console
         public override string Show() {
             if(State) {
                 return Title + ": " + OnText;
@@ -46,6 +47,7 @@ namespace Menu {
             }
         }
 
+        //action when enter is pressed
         public override bool Action() {
             State = !State;
 			Data[0] = State;
