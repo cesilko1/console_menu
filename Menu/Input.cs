@@ -29,7 +29,7 @@ namespace Menu {
 
 		//print componet into console
 		public override string Show() {
-			return Title + ": " + InputData + " ";
+			return Title + ": " + InputData;
 		}
 
 		//action when enter is preseed

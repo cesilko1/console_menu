@@ -13,7 +13,7 @@ public class main {
 		menu.AddItem(new Button("No"));     			 //item index 1
 		menu.AddItem(new Input("Name"));     			 //item index 2
 		menu.AddItem(new Switcher("Music")); 			 //item index 3
-		menu.AddItem(new Option("Difficulty", new string[]{"Easy", "Normal", "Hard", "Unplayable"})); //item index 4
+		menu.AddItem(new Option("Difficulty", new string[]{"Easy", "Normal", "Hard"})); //item index 4
 
 		//method Display() returns index of pressed button and show interactive menu in console
 		int menu_id = menu.Display();
