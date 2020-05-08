@@ -7,11 +7,13 @@ public class main {
 		//create instance with menu header, set true for looped menu cursor
 		ConsoleMenu menu = new ConsoleMenu("Example menu", true);
 
+
 		//adding items into menu
-		menu.AddItem(new Button("Yes"));    //item index 0
-		menu.AddItem(new Button("No"));     //item index 1
-		menu.AddItem(new Input("Name"));     //item index 2
-		menu.AddItem(new Switcher("Music")); //item index 3
+		menu.AddItem(new Button("Yes"));   				 //item index 0
+		menu.AddItem(new Button("No"));     			 //item index 1
+		menu.AddItem(new Input("Name"));     			 //item index 2
+		menu.AddItem(new Switcher("Music")); 			 //item index 3
+		menu.AddItem(new Option("Difficulty", new string[]{"Easy", "Normal", "Hard", "Unplayable"})); //item index 4
 
 		//method Display() returns index of pressed button and show interactive menu in console
 		int menu_id = menu.Display();
@@ -24,5 +26,8 @@ public class main {
 
 		//write data of menu item with index 3
 		Console.WriteLine(menu.GetData()[3]);
+
+		//write data of menu item with index 4
+		Console.WriteLine(menu.GetData()[4]);
 	}
 }

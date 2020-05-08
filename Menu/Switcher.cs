@@ -9,8 +9,8 @@ namespace Menu {
 
         private bool State = false;
 
-        private string OnText = "on  ";
-        private string OffText = "off ";
+        private string OnText = "on";
+        private string OffText = "off";
 
 
         //==================== CONSTRUCTOR ====================//
