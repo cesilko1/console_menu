@@ -2,7 +2,7 @@
 
 ## Interactive console menu for C#
 
-*v 1.1.2*
+*v 1.2.0*
 
 ---
 
@@ -49,31 +49,44 @@ public class main {
 
 * **Button()**
 	* Parameters:
+
 		1) Title
+
 	* closes the menu and returns index of item
 
 * **Switcher()**
 	* Parameters:
+
 		1) Title
-		2)* State *bool*
-		3)* OnText *string*
-		4)* OffText *string*
+
+		2)* State _bool_
+
+		3)* OnText _string_
+
+		4)* OffText _string_
+
 	* switches between on and off
 	* return data:
 		* *bool*
 
 * **Option()**
 	* Parameters:
+
 		1) Title
-		2) Options *string[]*
+
+		2) Options _string[]_
+
 	* switches between given keywords
 	* return data
 		* *string*
 
 * **Input()**
 	* Parameters:
+
 		1) Title
-		2)* InputData *string*
+
+		2)* InputData _string_
+
 	* text or number input
 	* return data:
 		* *string/int*
