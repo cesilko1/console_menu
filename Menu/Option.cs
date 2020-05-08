@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Menu {
 
-	public class Switcher : MenuItem {
+	public class Option : MenuItem {
         //==================== ATRIBUTES ====================//
 
         private bool State = false;
@@ -15,24 +15,26 @@ namespace Menu {
 
         //==================== CONSTRUCTOR ====================//
 
-        public Switcher(string Title) {
+        public Option(string Title) {
 			base.Data.Add(State);
             base.Title = Title;
         }
 
-        public Switcher(string Title, bool State) {
+        public Option(string Title, bool State) {
 			base.Data.Add(State);
             base.Title = Title;
             this.State = State;
         }
 
-        public Switcher(string Title, bool State, string OnText, string OffText) {
+        public Option(string Title, bool State, string OnText, string OffText) {
 			base.Data.Add(State);
             base.Title   = Title;
             this.State   = State;
             this.OnText  = OnText;
             this.OffText = OffText;
         }
+
+        public 
 
 
         //==================== METHODS ====================//

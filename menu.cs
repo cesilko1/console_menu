@@ -11,7 +11,7 @@ public class main {
 		menu.AddItem(new Button("Yes"));    //item index 0
 		menu.AddItem(new Button("No"));     //item index 1
 		menu.AddItem(new Input("Name"));     //item index 2
-		menu.AddItem(new Switcher("Music")); //item index 3
+		menu.AddItem(new Option("Music")); //item index 3
 
 		//method Display() returns index of pressed button and show interactive menu in console
 		int menu_id = menu.Display();
