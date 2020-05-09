@@ -50,20 +50,20 @@ public class main {
 * **Button()**
 	* Parameters:
 
-		1) Title
+		* Title
 
 	* closes the menu and returns index of item
 
 * **Switcher()**
 	* Parameters:
 
-		1) Title
+		* Title
 
-		2)* State _bool_
+		* State _bool_
 
-		3)* OnText _string_
+		* OnText _string_
 
-		4)* OffText _string_
+		* OffText _string_
 
 	* switches between on and off
 	* return data:
@@ -72,9 +72,9 @@ public class main {
 * **Option()**
 	* Parameters:
 
-		1) Title
+		* Title
 
-		2) Options _string[]_
+		* Options _string[]_
 
 	* switches between given keywords
 	* return data
@@ -83,9 +83,9 @@ public class main {
 * **Input()**
 	* Parameters:
 
-		1) Title
+		* Title
 
-		2)* InputData _string_
+		* InputData _string_
 
 	* text or number input
 	* return data:
