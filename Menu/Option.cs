@@ -13,12 +13,13 @@ namespace Menu {
 
 		//==================== CONSTRUCTOR ====================//
 
-		public Option(string Title, string[] Options) {
+		public Option(string Title, string[] Options, int State=0) {
 
 			base.Data.Add(State);
 			base.Data[0] = Options[State];
 			base.Title = Title;
 
+			this.State = State;
 			this.Options = new string[Options.Length];
 			this.Options = Options;
 		}

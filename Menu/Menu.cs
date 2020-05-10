@@ -59,7 +59,7 @@ namespace Menu {
 			while(Running) {
 
 				//set console colores
-				Console.Clear();
+				Console.SetCursorPosition(0, 0);
 				Console.ResetColor();
 				Console.ForegroundColor = TextColor;
 
@@ -75,12 +75,12 @@ namespace Menu {
 					if(i == ActiveItem) {
 						Console.ForegroundColor = HighlightText;
 						Console.BackgroundColor = HighlightBackground;
-						Console.WriteLine(MenuItems[i].Show());
+						Console.WriteLine(MenuItems[i].Show().PadRight(Console.WindowWidth));
 						Console.ResetColor(); 
 					}
 					else {
 						Console.ForegroundColor = TextColor;
-						Console.WriteLine(MenuItems[i].Show());
+						Console.WriteLine(MenuItems[i].Show().PadRight(Console.WindowWidth));
 						Console.ResetColor();
 					}
 				}				

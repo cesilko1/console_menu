@@ -2,11 +2,11 @@
 
 ## Interactive console menu for C#
 
-*v 1.2.0*
+*v 1.3.1*
 
 ---
 
-### short example code
+### example code
 ```csharp
 using System;
 using Menu;
