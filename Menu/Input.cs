@@ -10,6 +10,10 @@ namespace Menu {
 		//input data that is returned and displayed in console
 		private string InputData = "";
 
+		//cursor position
+		private int CLeft = 0;
+		private int CTop  = 0;
+
 		//==================== CONSTRUCTORS ====================//
 
 		public Input(string Title) {
@@ -29,14 +33,21 @@ namespace Menu {
 
 		//print componet into console
 		public override string Show() {
+			CLeft = Console.CursorLeft;
+			CTop  = Console.CursorTop;
+
 			return Title + ": " + InputData;
 		}
 
 		//action when enter is preseed
 		public override bool Action() {
 			Console.CursorVisible = true;
-			Console.Clear();
+
+			Console.SetCursorPosition(CLeft, CTop);
+			
 			Console.Write(Title + ": ");
+
+			
 
 			InputData = Console.ReadLine();
 
