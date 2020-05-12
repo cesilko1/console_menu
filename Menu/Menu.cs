@@ -78,12 +78,12 @@ namespace Menu {
 					if(i == ActiveItem) {
 						Console.ForegroundColor = HighlightText;
 						Console.BackgroundColor = HighlightBackground;
-						Console.WriteLine(MenuItems[i].Show().PadRight(Console.WindowWidth));
+						Console.Write(MenuItems[i].Show().PadRight(Console.WindowWidth));
 						Console.ResetColor(); 
 					}
 					else {
 						Console.ForegroundColor = TextColor;
-						Console.WriteLine(MenuItems[i].Show().PadRight(Console.WindowWidth));
+						Console.Write(MenuItems[i].Show().PadRight(Console.WindowWidth));
 						Console.ResetColor();
 					}
 
