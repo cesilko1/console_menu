@@ -11,7 +11,6 @@ namespace Menu {
 		private string InputData = "";
 
 		//cursor position
-		private int CLeft = 0;
 		private int CTop  = 0;
 
 		//==================== CONSTRUCTORS ====================//
@@ -33,10 +32,7 @@ namespace Menu {
 
 		//print componet into console
 		public override string Show() {
-			CLeft = Console.CursorLeft;
 			CTop  = Console.CursorTop;
-
-			InputData = CTop.ToString();
 
 			return Title + ": " + InputData;
 		}
@@ -45,7 +41,7 @@ namespace Menu {
 		public override bool Action() {
 			Console.CursorVisible = true;
 
-			Console.SetCursorPosition(CLeft, CTop);
+			Console.SetCursorPosition(Title.Length+2, CTop);
 
 			
 
