@@ -2,7 +2,7 @@
 
 ## Interactive console menu for C#
 
-*v 1.3.2*
+*v 1.3.3*
 
 ---
 
@@ -94,4 +94,4 @@ public class main {
 
 ---
 
-* optional parameters
+parameters with * is optional
