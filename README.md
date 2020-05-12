@@ -2,7 +2,7 @@
 
 ## Interactive console menu for C#
 
-*v 1.3.1*
+*v 1.3.2*
 
 ---
 
@@ -59,11 +59,11 @@ public class main {
 
 		* Title
 
-		* State _bool_
+		* State* _bool_
 
-		* OnText _string_
+		* OnText* _string_
 
-		* OffText _string_
+		* OffText* _string_
 
 	* switches between on and off
 	* return data:
@@ -85,8 +85,13 @@ public class main {
 
 		* Title
 
-		* InputData _string_
+		* InputData* _string_
 
 	* text or number input
 	* return data:
 		* *string/int*
+
+
+---
+
+* optional parameters
