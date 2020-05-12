@@ -36,6 +36,8 @@ namespace Menu {
 			CLeft = Console.CursorLeft;
 			CTop  = Console.CursorTop;
 
+			InputData = CTop.ToString();
+
 			return Title + ": " + InputData;
 		}
 
@@ -44,8 +46,6 @@ namespace Menu {
 			Console.CursorVisible = true;
 
 			Console.SetCursorPosition(CLeft, CTop);
-			
-			Console.Write(Title + ": ");
 
 			
 

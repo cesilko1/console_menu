@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -51,7 +52,7 @@ namespace Menu {
 
 			//set console
 			Console.Clear();
-			Console.CursorVisible = false;
+			Console.CursorVisible = true;
 
 			//pressed button
 			ConsoleKeyInfo btn;
@@ -71,6 +72,8 @@ namespace Menu {
 				//list and print all menu items
 				for(int i = 0; i < MenuItems.Count; i++) {
 
+					Thread.Sleep(750);
+
 					//it item is active, then print highlighted item
 					if(i == ActiveItem) {
 						Console.ForegroundColor = HighlightText;
@@ -83,6 +86,8 @@ namespace Menu {
 						Console.WriteLine(MenuItems[i].Show().PadRight(Console.WindowWidth));
 						Console.ResetColor();
 					}
+
+					Console.WriteLine(Console.CursorLeft + " : " + Console.CursorTop);
 				}				
 
 				btn = Console.ReadKey();
