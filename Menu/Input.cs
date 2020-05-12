@@ -43,6 +43,9 @@ namespace Menu {
 
 			Console.SetCursorPosition(Title.Length+2, CTop);
 
+			Console.Write(" ".PadRight(Console.WindowWidth-Title.Length-2));
+
+			Console.SetCursorPosition(Title.Length+2, CTop);
 			
 
 			InputData = Console.ReadLine();

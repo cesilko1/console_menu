@@ -122,7 +122,10 @@ namespace Menu {
 
 					//activete item when enter is pressed
 					case ConsoleKey.Enter:
+						Console.ForegroundColor = HighlightText;
+						Console.BackgroundColor = HighlightBackground;
 						Running = MenuItems[ActiveItem].Action();
+						Console.ResetColor();
 						break;
 
 					default:
