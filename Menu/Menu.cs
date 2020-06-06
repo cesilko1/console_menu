@@ -16,7 +16,7 @@ namespace Menu {
 		private int ActiveItem = 0;
 
 		//if cursor is on bottom then cursor will go on top
-		private bool MenuLoop = false;
+		private bool MenuLoop;
  
 		//color defintions
 		public ConsoleColor TextColor           = ConsoleColor.Green;
@@ -26,11 +26,7 @@ namespace Menu {
 
 		//==================== CONSTRUCTOR ====================//
 
-		public ConsoleMenu(string MenuHeader) {
-			this.MenuHeader = MenuHeader;
-		}
-
-		public ConsoleMenu(string MenuHeader, bool MenuLoop) {
+		public ConsoleMenu(string MenuHeader, bool MenuLoop = false) {
 			this.MenuHeader = MenuHeader;
 			this.MenuLoop   = MenuLoop;
 		}
@@ -97,9 +93,11 @@ namespace Menu {
 						}
 						else {
 							if(MenuLoop) {
+								//go to bottom of menu
 								ActiveItem = MenuItems.Count-1;
 							}
 							else {
+								//stay on top
 								ActiveItem = 0;
 							}
 						}
@@ -112,9 +110,11 @@ namespace Menu {
 						}
 						else {
 							if(MenuLoop) {
+								//go to top of menu
 								ActiveItem = 0;
 							}
 							else {
+								//stay on bottom
 								ActiveItem = MenuItems.Count-1;
 							}
 						}

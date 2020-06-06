@@ -7,6 +7,8 @@ namespace Menu {
 	public class Input : MenuItem {
 		//==================== ATRIBUTES ====================//
 
+		private const int IdentationSize = 2;
+
 		//input data that is returned and displayed in console
 		private string InputData = "";
 
@@ -15,13 +17,7 @@ namespace Menu {
 
 		//==================== CONSTRUCTORS ====================//
 
-		public Input(string Title) {
-			base.Title = Title;
-
-			base.Data.Add(InputData);
-		}
-
-		public Input(string Title, string InputData) {
+		public Input(string Title, string InputData = "") {
 			base.Title     = Title;
 			this.InputData = InputData;
 
@@ -41,11 +37,11 @@ namespace Menu {
 		public override bool Action() {
 			Console.CursorVisible = true;
 
-			Console.SetCursorPosition(Title.Length+2, CTop);
+			Console.SetCursorPosition(Title.Length+IdentationSize, CTop);
 
-			Console.Write(" ".PadRight(Console.WindowWidth-Title.Length-2));
+			Console.Write(" ".PadRight(Console.WindowWidth-Title.Length-IdentationSize));
 
-			Console.SetCursorPosition(Title.Length+2, CTop);
+			Console.SetCursorPosition(Title.Length+IdentationSize, CTop);
 			
 
 			InputData = Console.ReadLine();

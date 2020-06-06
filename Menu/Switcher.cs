@@ -7,26 +7,14 @@ namespace Menu {
 	public class Switcher : MenuItem {
         //==================== ATRIBUTES ====================//
 
-        private bool State = false;
-
-        private string OnText = "on";
-        private string OffText = "off";
+        private bool   State;
+        private string OnText;
+        private string OffText;
 
 
         //==================== CONSTRUCTOR ====================//
 
-        public Switcher(string Title) {
-			base.Data.Add(State);
-            base.Title = Title;
-        }
-
-        public Switcher(string Title, bool State) {
-			base.Data.Add(State);
-            base.Title = Title;
-            this.State = State;
-        }
-
-        public Switcher(string Title, bool State, string OnText, string OffText) {
+        public Switcher(string Title, bool State = false, string OnText = "on", string OffText = "off") {
 			base.Data.Add(State);
             base.Title   = Title;
             this.State   = State;
@@ -49,8 +37,8 @@ namespace Menu {
 
         //action when enter is pressed
         public override bool Action() {
-            State = !State;
-			Data[0] = State;
+            State   = !State;
+			Data[0] =  State;
             return true;
         }
     }

@@ -15,10 +15,15 @@ namespace Menu {
 
 		//==================== METHODS ====================//
 
-		//action vhen pressed enter om menu item		
+		//action vhen pressed enter om menu item
+		//
+		//Returns false, if the item closes the menu.
+		//Returns true, if the item 	only sets the input value.	
 		public abstract bool Action();
 
 		//show item in console
+		//
+		//Returns string which should be displayed in console.
 		public abstract string Show();
 
 	}

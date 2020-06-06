@@ -17,10 +17,10 @@ namespace Menu {
 
 			base.Data.Add(State);
 			base.Data[0] = Options[State];
-			base.Title = Title;
+			base.Title   = Title;
 
-			this.State = State;
 			this.Options = new string[Options.Length];
+			this.State   = State;
 			this.Options = Options;
 		}
 		

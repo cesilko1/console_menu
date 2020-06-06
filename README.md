@@ -2,7 +2,11 @@
 
 ## Interactive console menu for C#
 
-*v 1.3.3*
+*v 1.3.4*
+
+---
+
+![menu](./example_menu.png)
 
 ---
 
