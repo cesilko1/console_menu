@@ -6,6 +6,8 @@
 
 ---
 
+**note:** This software is developed and optimalised for Linux with Mono runtime. Running this software on Windows may contains bugs.
+
 ![menu](./example_menu.png)
 
 ---
